@@ -1,0 +1,430 @@
+
+
+html{
+	box-sizing: border-box;
+	font-size: 62.5%; /*reset para rems - 62.5% = 10px de 16px*/
+}
+
+
+*,*:before,*:after{
+	box-sizing: inherit;
+}
+
+body{
+	font-family: 'Lato', sans-serif;
+	font-size: 1.6rem;
+	line-height: 2;
+}
+
+
+
+/* Globales */
+
+img{
+	max-width: 100%; /*la imagen se adapta al contenedor*/
+}
+
+.contenedor{
+	max-width: 120rem; /* Tomar todo el espacio disponible pero no se puede pasar de 1200px*/
+	margin:0 auto 0 auto;  /*centrar hacia los lados izquierda y derecha*/
+}
+
+h1{
+ 	font-size: 3.8rem;
+}
+
+h2{
+	font-size: 3.4rem;
+}
+
+h3{
+	font-size: 3rem;
+}
+
+h4{
+	font-size: 2.6rem;
+}
+
+/* Utilidades */
+.seccion{
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.fw-300{
+	font-weight: 300;
+}
+
+.centrar-texto{
+	text-align: center;
+}
+
+.d-block{
+	display: block !important;
+}
+
+.contenido-centrado{
+	max-width: 80rem; /*maximo 800px de ahi no se pasa*/
+}
+
+/* Botones */
+.boton{
+	color:#FFFFFF;
+	font-weight: 700;
+	text-decoration: none;
+	font-size: 1.8rem;
+	padding: 1rem 3rem; /*1 ariba y 3 izquiera y derecha*/
+	margin-top: 3rem;
+	display: inline-block; /*necesario para dar margin */
+	text-align: center;
+	border:none;
+}
+
+.boton:hover{
+	cursor: pointer;
+}
+
+.boton-amarillo{
+	background-color: #E08709;
+}
+
+.boton-verde{
+	background-color: #71B100;
+}
+
+
+
+
+/* Header */
+.site-header{
+	background-color: #333333;
+	padding: 1rem 0 3rem 0;
+}
+
+/*aplica este estilo al elemento que tenga las dos clase site-header e inicio*/
+.site-header.inicio{
+	background-image: url(../img/header.jpg);
+	background-position: center center; /*mostrar la imagen desde el centro y se expande a todo el contenido*/
+	background-size: cover;/*fuerza a que la imagen tome todo el espacio disponible tanto en altura como en anchura y guarda las proporciones*/
+	height: 100vh; /*toma la altura de mi pantalla con vh maximo la imagen ocupara toda la pantalla*/
+	min-height: 60rem;/*si el usuario tiene pantalla pequeña minimo medira 600px*/
+
+}
+
+.contenido-header{
+	height: 100%;
+	display: flex; /*solo afectara el primer nivel de hijos en este caso el div barra y el h1*/
+	flex-direction: column; /*alinear en tipo columna*/
+	justify-content: space-between; /*alinear elemento uno ariba y otro abajo*/
+}
+
+.contenido-header h1{
+	color:#ffffff;
+	padding-bottom: 2rem;
+	max-width: 60rem;
+	line-height: 2; /*interlineado*/
+}
+
+
+.barra{
+	display: flex;
+	justify-content:space-between; /*alinear horizontalemente los elementos uno a la izquiera y otro a la derecha*/
+	align-items:center; /*alinear verticalmente*/
+	padding-top: 3rem;
+}
+
+/* Navegacion */
+/* Estilos a los enlaces de la navegacion*/
+.navegacion a{
+	color:#ffffff;
+	text-decoration: none;
+	font-size: 1.8rem; /*18px*/
+	margin-right: 2rem;/*margen a la derecha separacion con el siguiente enlace */
+}
+
+.navegacion a:hover{
+	color:#71B100;
+}
+/*al ultimo enlace de navegacion quitarle el margen derecho*/
+.navegacion a:last-of-type{
+	margin:0;
+}
+
+/* Iconos Nosotros*/
+
+.iconos-nosotros{
+	display: flex;
+	justify-content: space-between;
+}
+
+.icono{
+	flex-basis: calc( 33.3% - 1rem ); /*ancho de los elementos es necesario usarlo por que se esta usando flexbox*/
+	text-align: center;
+}
+
+.icono h3{
+	text-transform: uppercase;
+}
+
+
+/* Anuncios */
+.contenedor-anuncios{
+	display: flex;
+	justify-content: space-between; /*separacion entre anuncios*/
+	flex-wrap: wrap; /*nowrap por defecto*/
+}
+
+.anuncio{
+	flex:0 0 calc(33.3% - 1rem);
+	/*flex-grow: 0; /*para que el contenido cresca */
+	/*flex-shrink: 0; /*permite que el contenido se haga pequeño si es posible
+	flex-basis: calc(33.3% - 1rem); todas se escriben como en la linea 169*/
+	border:1px solid #B5B5B5;
+	background-color: #F5F5F5;
+	margin-bottom: 2rem;
+}
+
+.contenido-anuncio{
+	padding:2rem;
+}
+
+.contenido-anuncio h3,
+.contenido-anuncio p{
+	margin:0;
+}
+
+.precio{
+	color:#71B100;
+	font-weight: 700;
+}
+
+.iconos-caracteristicas{
+	list-style: none;
+	padding: 0;
+	display: flex;
+	justify-content: space-evenly;
+	flex: 1; /*el contenido crece pero se limita por el max-width de 50rem*/
+	max-width: 50rem;
+}
+
+.iconos-caracteristicas li{
+	flex: 1;
+	display: flex;
+}
+
+.iconos-caracteristicas li img{
+	margin-right: 2rem;
+}
+
+.ver-todas{
+	display: flex;
+	justify-content: flex-end;
+}
+
+/* Contacto Home*/
+.imagen-contacto{
+	background-image: url(../img/encuentra.jpg);
+	background-position: center center;
+	background-size: cover;
+	height: 40rem;
+	display: flex;
+	align-items: center; /*centrar verticalmente*/
+}
+
+.contenido-contacto{
+	flex:1; /* Detecta el tamaño disponible */
+	color:#ffffff;
+}
+
+.contenido-contacto p{
+	font-size: 1.8rem;
+}
+
+
+/* Seccion Inferior */
+.seccion-inferior{
+	display: flex; /*guardar cambios y probar se coloca mitad y mitad*/
+	justify-content: space-between;
+}
+
+.seccion-inferior .blog{
+	flex-basis: 60%; /*toma solo el 60% de ancho */
+}
+
+.seccion-inferior .testimoniales{
+	flex-basis: calc(40% - 2rem); /*toma 40% de ancho*/
+}
+
+.entrada-blog{
+	display: flex; /*solo afecta al primer nivel el div imagen y el div text-entrada guardar cambios y probar*/
+	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+
+/*selecciona el ultimo elemento y le quita el margen*/
+.entrada-blog:last-of-type{
+	margin-bottom:0;
+}
+
+.entrada-blog .imagen{
+	flex-basis: 40%;
+}
+
+.entrada-blog .texto-entrada{
+	flex-basis: calc(60% - 3rem); /*le resta 30px para que halla algo de separacion*/
+}
+
+.texto-entrada a{
+	color:#000000;
+	text-decoration: none;
+}
+
+.texto-entrada h4{
+	margin:0;
+	line-height: 1.4;
+}
+
+/*crear un elemento despues del h4 (es la linea verde) son llamados pseudoelementos no son elementos html*/
+.texto-entrada h4::after{
+	/*content:'hola';*/
+	content:'';
+	display: block; /*para poder agregar with y margin*/
+	width: 15rem;
+	height: .5rem;
+	background-color: #71B100;
+	margin-top: 1rem;
+}
+.texto-entrada span{
+	color:#E08709;
+}
+
+/* Testomoniales */
+.testimonial{
+	background-color: #71B100;
+	font-size: 2.4rem;
+	padding: 2rem;
+	color:#ffffff;
+	border-radius:2rem;
+}
+
+.testimonial p{
+	text-align: right;
+}
+
+/*antes del blockquote crear comilla*/
+.testimonial blockquote::before{
+	content: '';
+	background-image: url(../img/comilla.svg);
+	width: 4rem;
+	height: 4rem;
+	position: absolute; /*hijo del blockquote*/
+	left: -2rem;
+
+}
+
+.testimonial blockquote{
+	position: relative; /*padre del elemento before*/
+	padding-left: 5rem;
+	font-weight: 300;
+}
+
+/* Footer*/
+.site-footer{
+	background-color: #333333;
+	margin:0;
+}
+
+.contenedor-footer{
+	padding: 3rem 0; /*3 ariba y abajo y 0 izquiera y derecha*/
+	display: flex; /*probar aqui*/
+	justify-content: space-between;
+
+}
+
+.copyright{
+	margin:0;
+	color: #ffffff;
+}
+
+
+
+
+/* INTERNAS */
+
+/* Nosotros */
+/*tengo este elemento padre y dos hijos el div imagen y el div texto-nosotros y asi creamos 2 columnas para cada uno*/
+.contenido-nosotros{
+	display: grid;
+	grid-template-columns: 50% 50%; /* una columna a la izquiera y otra a la derecha
+	50% para el div imagen  50% para el div texto-nosotros*/
+	grid-column-gap: 2rem; /*separacion entre cada columna columna imagen y columna text-nosotros*/
+}
+
+.texto-nosotros blockquote{
+	font-weight: 900;
+	font-size: 2rem;
+	margin:0;
+	padding: 0 0 1rem 0;
+
+}
+
+/*Anuncio*/
+.resumen-propiedad{
+	display: flex;
+	justify-content: space-between; /*alinea horizontalmente*/
+	align-items: center; /*alinea verticalmente*/
+}
+
+/* Contacto */
+
+/*afecta a todos los parrafos que esten dentro del form contacto*/
+.contacto p{
+	font-size: 1.4rem;
+	color:#4f4f4f;
+	margin: 2rem 0 0 0;
+}
+
+legend{
+	font-size: 2rem;
+	color:#4f4f4f;
+}
+
+label{
+	display: block; /*permite que el label tome todo el espacio disponible*/
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+/*selecciona todos los input excepto el submit*/
+input:not([type="submit"]),
+textarea,
+select{
+	padding: 1rem;
+	display: block; /*ocupa todo el espacio*/
+	width: 100%; /*tamaño 100%*/
+	background-color: #e1e1e1;
+	margin-bottom: 2rem;
+	border:none;
+	border-radius: 1rem;
+}
+
+input[type="radio"]{
+	width: auto;
+	margin: 0;
+}
+
+select{
+	-webkit-appearance:none; /*webkit necesario para chrome*/
+	appearence:none;
+}
+
+textarea{
+	height: 20rem;	
+}
+
+.forma-contacto{
+	max-width: 30rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center; /*centrar verticalmente*/
+}
